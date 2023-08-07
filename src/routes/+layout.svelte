@@ -1,7 +1,17 @@
 <script>
+  import "aos/dist/aos.css";
+  // @ts-ignore
+  import AOS from "aos";
+
+  import { onMount } from "svelte";
+
   import "../app.css";
 
   import Navbar from "../lib/components/Navbar.svelte";
+
+  onMount(() => {
+    AOS.init();
+  });
 </script>
 
 <svelte:head>

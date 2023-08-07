@@ -4,7 +4,7 @@
   import Facebook from "../icons/Facebook.svelte";
 </script>
 
-<div class="flex md:grid justify-center">
+<div class="flex md:grid justify-center" data-aos="fade-right">
   <div>
     <a href="https://github.com/alvinlaroya" target="_blank">
       <Github />

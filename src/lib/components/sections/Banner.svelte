@@ -10,7 +10,10 @@
   <div
     class="h-screen md:h-[300px] lg:h-[500px] grid content-center md:flex md:gap-24"
   >
-    <div class="flex justify-center md:mt-0 order-1 md:order-3 text-center">
+    <div
+      class="flex justify-center md:mt-0 order-1 md:order-3 text-center"
+      data-aos="zoom-in"
+    >
       <img src="/alvin.png" alt="" class="w-[70%] md:w-[400px] lg:w-[500px]" />
     </div>
     <div
@@ -21,7 +24,10 @@
     <div class="flex justify-center md:grid content-center order-3 md:order-1">
       <Social class="h-60" />
     </div>
-    <div class="order-last flex md:hidden mt-20 justify-center">
+    <div
+      class="animate-bounce order-last flex md:hidden mt-20 justify-center"
+      data-aos="fade-up"
+    >
       <Mouse />
       <p class="text-sm font-thin mx-2">Scroll down</p>
       <ArrowDown />
