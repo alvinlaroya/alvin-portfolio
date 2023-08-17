@@ -117,7 +117,7 @@
       </AccordionItem>
     </Accordion>
   </div>
-  <div class="order-1 md:order-2" data-aos="fade-left">
+  <div class="order-1 md:order-2 grid content-center" data-aos="fade-left">
     <img
       src="https://static.geekinsta.com/content/2020/05/web-development-frameworks.png"
       alt="techs"

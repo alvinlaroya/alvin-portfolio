@@ -1,4 +1,8 @@
 <script>
+    const EMAIL_JS_SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+    const EMAIL_JS_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+    const EMAIL_JS_PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+
     import {
         Label,
         Input,
@@ -13,7 +17,9 @@
     import HeaderTitle from "./HeaderTitle.svelte";
 
     let emailSent = false;
+    let emailSentFail = false;
     let sending = false;
+    let toastMessage = "aawgw";
 
     let from_name = "";
     let from_email = "";
@@ -30,25 +36,31 @@
 
         await emailjs
             .send(
-                "service_zcz9jfs",
-                "template_wrjungi",
+                EMAIL_JS_SERVICE_ID,
+                EMAIL_JS_TEMPLATE_ID,
                 templateParams,
-                "DUw16T85P5iAir2NQ"
+                EMAIL_JS_PUBLIC_KEY
             )
             .then(
                 function (response) {
+                    toastMessage = "Message sent successfully.";
                     console.log("SUCCESS!", response.status, response.text);
                     sending = false;
                     emailSent = true;
-
                     resetForm();
                 },
                 function (error) {
                     console.log("FAILED...", error);
+                    emailSentFail = true;
+                    toastMessage = "Email Sent Failed!";
                 }
             );
 
-        setTimeout(() => (emailSent = false), 3000);
+        setTimeout(() => {
+            emailSent = false;
+            emailSentFail = false;
+            toastMessage = "";
+        }, 3000);
     };
 
     const resetForm = () => {
@@ -68,11 +80,11 @@
 
 <HeaderTitle title="Contact Me" subtitle="Send Me A Message" />
 <div class="container grid grid-cols-1 md:grid-cols-2 content-center mt-16">
-    <div>
+    <div data-aos="fade-right">
         <img src="/wp5603752.jpg" alt="" />
     </div>
-    <div>
-        {#if emailSent}
+    <div class="mt-4" data-aos="fade-left">
+        {#if emailSent || emailSentFail}
             <Toast
                 transition="slide"
                 simple
@@ -80,10 +92,10 @@
             >
                 <Icon
                     name="papper-plane-outline"
-                    class="w-5 h-5 text-green-500 dark:text-green-500 rotate-45"
+                    class="w-5 h-5 {emailSent && 'text-green-500'} {emailSentFail && 'text-red-600'} rotate-45"
                 />
                 <div class="pl-4 text-sm font-normal">
-                    Message sent successfully.
+                    {toastMessage}
                 </div>
             </Toast>
         {/if}
@@ -109,7 +121,12 @@
             <Textarea bind:value={message} {...textareaprops} />
         </div>
         <div class="flex w-full justify-end">
-            <Button size="lg" color="purple" on:click={sendEmail}>
+            <Button
+                size="lg"
+                class="w-full md:w-auto"
+                color="purple"
+                on:click={sendEmail}
+            >
                 {#if sending}
                     <Spinner class="mr-3" size="4" color="white" />Sending ...
                 {:else}
