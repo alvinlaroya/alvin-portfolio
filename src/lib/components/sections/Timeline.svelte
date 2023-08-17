@@ -1,13 +1,9 @@
 <script>
   import { Timeline, TimelineItem, Button } from "flowbite-svelte";
+    import HeaderTitle from "./HeaderTitle.svelte";
 </script>
 
-<div class="mt-[2rem] md:mt-[15rem] md:my-28">
-  <div class="text-center" data-aos="fade-up">
-    <h1 class="text-4xl">Timeline</h1>
-    <p>Seminar/Training Attended</p>
-  </div>
-</div>
+<HeaderTitle title="Timeline" subtitle="Seminar/Training Attended" />
 <div class="flex justify-center">
   <Timeline>
     <TimelineItem
@@ -43,16 +39,19 @@
         ></Button
       >
     </TimelineItem>
-    <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-        All of the pages and components are first designed in Figma and we keep
-        a parity between the two versions even as we update the project.
+    <TimelineItem title="MERN Stack Development Training" date="May 2022" data-aos="fade-left">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400" data-aos="fade-left">
+        MERN Stack Development Online Bootcamp.
       </p>
     </TimelineItem>
-    <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-        Get started with dozens of web components and interactive elements built
-        on top of Tailwind CSS.
+    <TimelineItem title="Hackathon 2019" date="March 9, 2019" data-aos="fade-left">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400" data-aos="fade-left">
+        Participate in Provincial School Hackathon 2019
+      </p>
+    </TimelineItem>
+    <TimelineItem title="Web Design Technology Competition" date="March 5, 2019" data-aos="fade-left">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400" data-aos="fade-left">
+        Web Design Technology 10th La Union Provincial Skills Olympics
       </p>
     </TimelineItem>
   </Timeline>

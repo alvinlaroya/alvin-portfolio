@@ -1,13 +1,9 @@
 <script>
   import AboutMeImages from "./AboutMeImages.svelte";
+    import HeaderTitle from "./HeaderTitle.svelte";
 </script>
 
-<div class="mt-[2rem] md:mt-[15rem] md:my-28">
-  <div class="text-center" data-aos="fade-up">
-    <h1 class="text-4xl">About Me</h1>
-    <p>My Introduction</p>
-  </div>
-</div>
+<HeaderTitle title="About Me" subtitle="My Introduction" />
 <div class="grid grid-cols-1 md:grid-cols-2 mt-7 md:px-32">
   <div class="order-2 md:order-1 flex md:px-24 justify-center mt-8 md:mt-0">
     <AboutMeImages />
@@ -40,11 +36,13 @@
         </p>
       </div>
     </div>
-    <button
-      type="button"
-      data-aos="zoom-in"
-      class="w-full md:w-48 mt-9 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-normal rounded-lg text-lg px-5 py-4 text-center mr-2 mb-2"
-      >Download CV</button
-    >
+    <a href="/files/alvinlaroyaresumeupdated.docx">
+      <button
+        type="button"
+        data-aos="zoom-in"
+        class="w-full md:w-48 mt-9 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-normal rounded-lg text-lg px-5 py-4 text-center mr-2 mb-2"
+        >Download CV</button
+      >
+    </a>
   </div>
 </div>

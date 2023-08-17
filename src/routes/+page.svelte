@@ -4,6 +4,7 @@
   import SpeedDial from "../lib/components/SpeedDial.svelte";
   import Skills from "../lib/components/sections/Skills.svelte";
   import Timeline from "../lib/components/sections/Timeline.svelte";
+  import ContactMe from "../lib/components/sections/ContactMe.svelte";
 </script>
 
 <svelte:head>
@@ -14,3 +15,4 @@
 <SpeedDial />
 <Skills />
 <Timeline />
+<ContactMe />

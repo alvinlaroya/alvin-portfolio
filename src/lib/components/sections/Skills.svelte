@@ -1,5 +1,6 @@
 <script>
   import { AccordionItem, Accordion, Progressbar } from "flowbite-svelte";
+    import HeaderTitle from "./HeaderTitle.svelte";
   const frontendStack = [
     {
       title: "Vue",
@@ -11,6 +12,10 @@
     },
     {
       title: "Vuetify",
+      percent: 99,
+    },
+    {
+      title: "Nuxt",
       percent: 99,
     },
     {
@@ -83,12 +88,7 @@
   ];
 </script>
 
-<div class="mt-[2rem] md:mt-[15rem] md:my-28">
-  <div class="text-center" data-aos="fade-up">
-    <h1 class="text-4xl">Skills</h1>
-    <p>My Tech Stack</p>
-  </div>
-</div>
+<HeaderTitle title="Skills" subtitle="My Tech Stack" />
 <div class="grid grid-cols-1 md:grid-cols-2 content-center gap-9 mt-7 md:px-80">
   <div class="order-2 md:order-1 text-sm" data-aos="fade-right">
     <Accordion flush>
